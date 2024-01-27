@@ -1,7 +1,6 @@
 package [you_package_here];
 
 import android.graphics.*;
-import java.security.spec.*;
 
 /*
  Canvas Joystick for Android Games
@@ -87,21 +86,25 @@ public class TJoystick {
 		}
 	}
 	
-	public void setEnableBollCenter(Boolean b){
-		this.CONTROL_BOLL_CENTER = b;
+	public void setEnableCenter(){
+		this.CONTROL_BOLL_CENTER = true;
 	}
+	
 	public void setPosition(int x, int y){
 		this.x = x;
 		this.y = y;
 	}
+	
 	public int getSize(){
 		return JOYSTICK_SIZE;
 	}
-	public float getAngle(){
+	
+	public float getAngleDegrees(){
 		return angleDegrees;
 	}
-  public boolean isAction(){
-		return this.isMove;
+	
+	public float getAngle(){
+		return this.angle;
 	}
 	
 	public void click(int touchx, int touchy, int pointerID){
@@ -141,8 +144,12 @@ public class TJoystick {
 			centerX = x;
 			centerY = y;
 		}
-  }
-  
+	}
+	
+	public boolean isAction(){
+		return this.isMove;
+	}
+	
 	public int getOrientation(){
 		int status = -1;
 		
