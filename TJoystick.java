@@ -1,6 +1,7 @@
 package [you_package_here];
 
 import android.graphics.*;
+import java.security.spec.*;
 
 /*
  Canvas Joystick for Android Games
@@ -43,7 +44,7 @@ public class TJoystick {
 	private final float CONTROL_BORDER = 20;
 	private final int CONTROL_ALPHA = 40;
 	private final int CONTRPL_STROKE_WIDTH = 5;
-	private Boolean CONTROL_BOLL_CENTER = false;
+	private Boolean CONTROL_CENTER = false;
 	
 	public TJoystick(int x, int y, int size){
 		super();
@@ -71,7 +72,7 @@ public class TJoystick {
 		
 		canvas.drawCircle(x, y, JOYSTICK_SIZE, joystick);
 		canvas.drawCircle(x, y, JOYSTICK_SIZE, control);
-		if(CONTROL_BOLL_CENTER) canvas.drawCircle(centerX, centerY, centerSize, joystick);
+		if(CONTROL_CENTER) canvas.drawCircle(centerX, centerY, centerSize, joystick);
 	}
 	
 	public void onUpdate() {
@@ -87,7 +88,7 @@ public class TJoystick {
 	}
 	
 	public void setEnableCenter(){
-		this.CONTROL_BOLL_CENTER = true;
+		this.CONTROL_CENTER = true;
 	}
 	
 	public void setPosition(int x, int y){
